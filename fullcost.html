@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Selection resume">
+    <meta name="author" content="MAALTO SYSTEMS">
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <title>FLAKT MÉXICO : Resume</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,400italic,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:300,200,100' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="js/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="js/jquery.gritter/css/jquery.gritter.css" />
+    <link rel="stylesheet" href="fonts/font-awesome-4/css/font-awesome.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="js/jquery.nanoscroller/nanoscroller.css" />
+    <link rel="stylesheet" href="js/jquery.easypiechart/jquery.easy-pie-chart.css" />
+    <link rel="stylesheet" href="js/bootstrap.switch/bootstrap-switch.css" />
+    <link rel="stylesheet" href="js/bootstrap.datetimepicker/css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="js/jquery.select2/select2.css" />
+    <link rel="stylesheet" href="js/bootstrap.slider/css/slider.css" />
+    <link rel="stylesheet" href="js/jquery.niftymodals/css/component.css" />
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+<body>
+
+<!-- Fixed navbar -->
+<div id="head-nav" class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="fa fa-gear"></span>
+      </button>
+
+      <img src="images/logo-flakt-c.bmp" style="padding-top: 10px; padding-left: 25px; padding-right: 47px;">
+        
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+  <ul class="nav navbar-nav navbar-right user-nav">
+    <li class="dropdown profile_menu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img alt="Avatar" src="images/avatar2.jpg" />FLAKT MÉXICO <b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li><a href="#">Profile</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Sign Out</a></li>
+      </ul>
+    </li>
+  </ul>
+
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+<!-- Nifty Modal -->
+<div class="md-modal colored-header success md-effect-10" id="general">
+    <div class="md-content">
+      <div class="modal-header">
+        <h3>General info</h3>
+        <button type="button" class="close md-close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+      <div class="modal-body">
+
+        <h3>Customer</h3>
+        <div class="content">
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Installation</th>
+                  <th>Proposal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Cemento Mariel</td>
+                  <td>ME-021</td>
+                  <td>1021 k 0734 OMR</td>
+                </tr>
+              </tbody>
+            </table>              
+          </div>
+        </div>
+
+        <br />
+
+        <h3>Standard conditions</h3>
+        <div class="content">
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Description</th>
+                  <th>SI</th>
+                  <th>AM</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Temperature</td>
+                  <td>0 °C</td>
+                  <td>70 °F</td>
+                </tr>
+                <tr>
+                  <td>Pressure</td>
+                  <td>1013.25 mBar</td>
+                  <td>29.927 inHg</td>
+                </tr>
+                <tr>
+                  <td>Air</td>
+                  <td>1.293 kg/Nm3</td>
+                  <td>0.075 lb/ft3</td>
+                </tr>
+              </tbody>
+            </table>              
+          </div>
+        </div>
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-flat md-close" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+</div>
+
+<!-- Nifty Modal -->
+<div class="md-modal colored-header success md-effect-10" id="colored-primary">
+    <div class="md-content">
+      <div class="modal-header">
+        <h3>Selection results</h3>
+        <button type="button" class="close md-close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+      <div class="modal-body">
+
+        <div class="content">
+          <div class="table-responsive">
+              <table class="table table-bordered hover" id="datatable2" >
+                <thead>
+                  <tr>
+                    <th>Select</th>
+                    <th>No</th>
+                    <th>Type</th>
+                    <th>Size</th>
+                    <th>Eff</th>
+                    <th>RPM</th>
+                    <th>HP</th>
+                    <th>Pressure rise</th>
+                    <th>Work line</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="gradeA">
+                    <td><input type="radio"></td>
+                    <td>10</td>
+                    <td>HCGB</td>
+                    <td>140</td>
+                    <td>76.2</td>
+                    <td>791</td>
+                    <td>49.58</td>
+                    <td>1127.3</td>
+                    <td>3.2</td>
+                  </tr>
+                  <tr class="gradeA">
+                    <td><input type="radio"></td>
+                    <td>11</td>
+                    <td>HCGB</td>
+                    <td>160</td>
+                    <td>78.8</td>
+                    <td>647</td>
+                    <td>45.81</td>
+                    <td>1077.1</td>
+                    <td>2.6</td>
+                  </tr>
+                </tbody>
+              </table>   
+          </div>
+        </div>
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-flat md-close" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary btn-flat md-close" data-dismiss="modal">Proceed</button>
+      </div>
+    </div>
+</div>
+
+<!-- Nifty Modal -->
+<div class="md-modal colored-header success md-effect-10" id="colored-success">
+    <div class="md-content">
+      <div class="modal-header">
+        <h3>Preview</h3>
+        <button type="button" class="close md-close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+      <div class="modal-body"> 
+        <div class="text-center">
+          <h4>Sketch!</h4>
+          <img src="images/centrifugo200.jpg" alt="">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-flat md-close" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success btn-flat md-close" data-dismiss="modal">Imprimir</button>
+      </div>
+    </div>
+</div>
+
+<!-- Background Nifty Modal -->
+<div class="md-overlay"></div>
+
+<div id="cl-wrapper">
+		<div class="cl-sidebar">
+			<div class="cl-toggle"><i class="fa fa-bars"></i></div>
+			<div class="cl-navblock">
+        <div class="menu-space">
+          <div class="content">
+            <div class="side-user">
+              <div class="avatar"><img src="images/avatar1_50.jpg" alt="Avatar" /></div>
+              <div class="info">
+                <a href="#">FLAKT MÉXICO</a>
+                <img src="images/state_online.png" alt="Status" /> <span>Online</span>
+              </div>
+            </div>
+            <ul class="cl-vnavigation">
+              <li><a href="index.html"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
+              <li><a href="#"><i class="fa fa-tachometer"></i><span>Centrífugos</span></a>
+                <ul class="sub-menu">
+                  <li><a href="#">Select</a></li>
+                  <li><a href="#">More Info</a></li>
+                  <li>
+                    <figure>
+                      <img src="images/blur_bg.png" style="width: 100%">
+                    </figure>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="#"><i class="fa fa-tachometer"></i><span>Centrífugos de Techo</span></a>
+                <ul class="sub-menu">
+                  <li><a href="#">Select</a></li>
+                  <li><a href="#">More Info</a></li>
+                </ul>
+              </li>
+              <li><a href="#"><i class="fa fa-tachometer"></i><span>Axiales</span></a>
+                <ul class="sub-menu">
+                  <li><a href="#">Select</a></li>
+                  <li><a href="#">More Info</a></li>
+                </ul>
+              </li>
+              <li><a href="#"><i class="fa fa-tachometer"></i><span>Enfriadores evaporativos</span></a>
+                <ul class="sub-menu">
+                  <li><a href="#">Select</a></li>
+                  <li><a href="#">More Info</a></li>
+                </ul>
+              </li>
+              <li><a href=""><i class="fa fa-bar-chart-o"></i><span>Reports</span></a></li>
+              <li><a href=""><i class="fa fa-lock"></i><span>Password Requests</span></a></li>
+              <li><a href=""><i class="fa fa-gears"></i><span>Admin</span></a>
+                <ul class="sub-menu">
+                  <li><a href="#">Users</a></li>
+                  <li><a href="#">Customers</a></li>
+                  <li><a href="#">Fans</a></li>
+                  <li><a href="#">Accessories</a></li>
+                  <li><a href="#">Catalogs</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="text-right collapse-button" style="padding:7px 9px;">
+          <button id="sidebar-collapse" class="btn btn-default" style=""><i style="color:#fff;" class="fa fa-angle-left"></i></button>
+        </div>
+			</div>
+		</div>
+
+  <div class="container-fluid" id="pcont">
+    <div class="page-head">
+      <h2>Resume - Centrifugal HA</h2>
+    </div>
+    <div class="cl-mcont">		
+      <div class="row">
+
+        <div class="row" style="margin: auto;">
+          <div class="col-xs-3 col-sm-2 col-md-1">
+            <button type="button" class="btn btn-primary btn-lg btn-block" data-placement="top" data-toggle="tooltip" data-original-title="Return to wizard">
+              <i class="fa fa-arrow-left"></i>
+            </button>
+          </div>
+          <div class="col-xs-3 col-sm-2 col-md-1">
+            <button type="button" class="btn btn-primary btn-lg btn-block md-trigger" data-placement="top" data-toggle="tooltip" data-original-title="Geneal Info" data-modal="general">
+              <i class="fa fa-fire"></i>
+            </button>
+          </div>
+          <div class="col-xs-3 col-sm-2 col-md-1">
+            <button type="button" class="btn btn-primary btn-lg btn-block md-trigger" data-placement="top" data-toggle="tooltip" data-original-title="Sketch" data-modal="colored-success">
+              <i class="fa fa-picture-o"></i>
+            </button>
+          </div>
+          <div class="col-xs-3 col-sm-2 col-md-1">
+            <button type="button" class="btn btn-primary btn-lg btn-block" data-placement="top" data-toggle="tooltip" data-original-title="Technical Info">
+              <i class="fa fa-info"></i>
+            </button>
+          </div>
+          <div class="col-xs-3 col-sm-2 col-md-1">
+            <button type="button" class="btn btn-primary btn-lg btn-block" data-placement="top" data-toggle="tooltip" data-original-title="Price">
+              <i class="fa fa-usd"></i>
+            </button>
+          </div>
+          <div class="col-xs-3 col-sm-2 col-md-1">
+            <button type="button" class="btn btn-primary btn-lg btn-block" data-placement="top" data-toggle="tooltip" data-original-title="Full Cost">
+              <i class="fa fa-money"></i>
+            </button>
+          </div>
+          <div class="col-xs-3 col-sm-2 col-md-1">
+            <button type="button" class="btn btn-primary btn-lg btn-block" data-placement="top" data-toggle="tooltip" data-original-title="Export PDF">
+              <i class="fa fa-file-text"></i>
+            </button>
+          </div>
+          <div class="col-xs-3 col-sm-2 col-md-1">
+            <button type="button" class="btn btn-primary btn-lg btn-block" data-placement="top" data-toggle="tooltip" data-original-title="Print">
+              <i class="fa fa-print"></i>
+            </button>
+          </div> 
+        </div>
+
+        <hr>
+
+          <div class="col-sm-12">
+            <table class="table no-border table-condensed">
+              <thead class="no-border">
+                <tr class="success">
+                  <th colspan="7"><strong>Indata</strong></th> 
+                </tr>
+              </thead>
+              <tbody class="no-border-y">
+                <tr>
+                  <td style="width: 15%;"><label class="control-label">Flow</label></td>
+                  <td style="width: 15%;"><label class="control-label">Inlet pressure</label></td>
+                  <td style="width: 15%;"><label class="control-label">Outlet pressure</label></td>
+                  <td style="width: 15%;"><label class="control-label">Temperature</label></td>
+                  <td style="width: 15%;"><label class="control-label">Temp Cold Start Up</label></td>
+                  <td style="width: 15%;"><label class="control-label">Density</label></td>
+                  <td style="width: 10%;">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="input-group input-group-sm">
+                      <input type="text" class="form-control">
+                      <span class="input-group-addon">mmHg</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="input-group input-group-sm">
+                      <input type="text" class="form-control">
+                      <span class="input-group-addon">mmgw</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="input-group input-group-sm">
+                      <input type="text" class="form-control">
+                      <span class="input-group-addon">mmgw</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="input-group input-group-sm">
+                      <input type="text" class="form-control">
+                      <span class="input-group-addon">°C</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="input-group input-group-sm">
+                      <input type="text" class="form-control">
+                      <span class="input-group-addon">°C</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="input-group input-group-sm">
+                      <input type="text" class="form-control">
+                      <span class="input-group-addon">Kg/Nm&sup3;</span>
+                    </div>
+                  </td>
+                  <td>
+                    <button class="btn btn-primary btn-sm btn-block md-trigger" data-model="colored-primary">
+                      Search <i class="fa fa-search"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        
+        <div class="col-sm-6">
+
+          <table class="table no-border table-condensed">
+            <thead class="no-border">
+              <tr class="success">
+                <th style="width:50%;"><strong>General Conditions</strong></th>
+                <th style="width:25%"><strong>&nbsp;</strong></th>
+                <th style="width:25%"><strong>&nbsp;</strong></th>
+              </tr>
+            </thead>
+            <tbody class="no-border-y">
+              <tr>
+                <td>
+                  <label class="control-label">Barom Pressure</label>
+                </td>
+                <td><span>760</span></td>
+                <td><span>mmHg</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Elevation</label>
+                </td>
+                <td><span>0</span></td>
+                <td><span>m</span></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="table no-border table-condensed">
+            <thead class="no-border">
+              <tr class="success">
+                <th style="width:50%;"><strong>Selected fan</strong></th>
+                <th style="width:25%"><strong>&nbsp;</strong></th>
+                <th style="width:25%"><strong>&nbsp;</strong></th>
+              </tr>
+            </thead>
+            <tbody class="no-border-y">
+              <tr>
+                <td>
+                  <label class="control-label">Type</label>
+                </td>
+                <td><span>HCGB</span></td>
+                <td><span>&nbsp;</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Size</label>
+                </td>
+                <td><span>140</span></td>
+                <td><span>&nbsp;</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Fan connection area</label>
+                </td>
+                <td><span>1.568</span></td>
+                <td><span>m2</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Pd</label>
+                </td>
+                <td><span>0</span></td>
+                <td><span>Pa</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Accesories</label>
+                </td>
+                <td><span>0</span></td>
+                <td><span>Pa</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Inlet connection</label>
+                </td>
+                <td><span>0</span></td>
+                <td><span>Pa</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Oulet connection</label>
+                </td>
+                <td><span>0</span></td>
+                <td><span>Pa</span></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Flow</label>
+                </td>
+                <td><span>0</span></td>
+                <td><span>m3/h</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Total pressure</label>
+                </td>
+                <td><span>0</span></td>
+                <td><span>Pa</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Efficiancy</label>
+                </td>
+                <td><span>0</span></td>
+                <td><span>%</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">&nbsp;</label>
+                </td>
+                <td><span>0</span></td>
+                <td><span>Kp</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Power</label>
+                </td>
+                <td><span>0</span></td>
+                <td><span>HP</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Power at Cold Star Up</label>
+                </td>
+                <td><span>0</span></td>
+                <td><span>HP</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">&nbsp;</label>
+                </td>
+                <td><span>0</span></td>
+                <td><span>Throttle line</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Moment of inertia WR2</label>
+                </td>
+                <td><span>0</span></td>
+                <td><span>Kgm2</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Total wight</label>
+                </td>
+                <td><span>0</span></td>
+                <td><span>Kg</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Speed</label>
+                </td>
+                <td><span>0</span></td>
+                <td><span>rpm</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Start torque</label>
+                </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">At operation conditions</label>
+                </td>
+                <td><span>0</span></td>
+                <td><span>Nm</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">At 0 flow and 20º C</label>
+                </td>
+                <td><span>0</span></td>
+                <td><span>Nm</span></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="table no-border table-condensed">
+            <thead class="no-border">
+              <tr class="success">
+                <th style="width:50%;"><strong>Sound</strong></th>
+                <th style="width:20%;"><strong>&nbsp;</strong></th>
+                <th style="width:20%;"><strong>&nbsp;</strong></th>
+                <th style="width:10%;"><strong>&nbsp;</strong></th>
+              </tr>
+              <tr>
+                <th>&nbsp;</th>
+                <th>L wtot</th>
+                <th>L ptot at <span style="display: inline;">1</span></th>
+                <th>&nbsp;</th>
+              </tr>
+            </thead>
+            <tbody class="no-border-y">
+              <tr>
+                <td>
+                  <label class="control-label">To inlet and outlet</label>
+                </td>
+                <td><span>96</span></td>
+                <td><span>88</span></td>
+                <td><span>dB(A)</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">To surrounding - free inlet</label>
+                </td>
+                <td><span>94</span></td>
+                <td><span>86</span></td>
+                <td><span>dB(A)</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">To surrounding - ducted intet</label>
+                </td>
+                <td><span>93</span></td>
+                <td><span>85</span></td>
+                <td><span>dB(A)</span></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="table no-border table-condensed">
+            <thead class="no-border">
+              <tr class="success">
+                <th style="width:50%;"><strong>Fan cost</strong></th>
+                <th style="width:25%;"><strong>&nbsp;</strong></th>
+                <th style="width:25%;"><strong>&nbsp;</strong></th>
+              </tr>
+            </thead>
+            <tbody class="no-border-y">
+              <tr>
+                <td>
+                  <label class="control-label">Fan without frame for motor with</label>
+                </td>
+                <td><span>inspection door and drain</span></td>
+                <td><span>transmission not included</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Accessories included</label>
+                </td>
+                <td><span>Inlet Vane Controll</span></td>
+                <td><span>Inlet side</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">&nbsp;</label>
+                </td>
+                <td><span>Flexible joint</span></td>
+                <td><span>Inlet side</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">&nbsp;</label>
+                </td>
+                <td><span>Outlet Damper</span></td>
+                <td><span>Outlet side</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Fan</label>
+                </td>
+                <td><span>$ 100.00</span></td>
+                <td><span>MX</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Transmission</label>
+                </td>
+                <td><span>$ 100.00</span></td>
+                <td><span>MX</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">H.H</label>
+                </td>
+                <td><span>$ 100.00 ?</span></td>
+                <td><span>MX</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">OBS selected</label>
+                </td>
+                <td><span>yes/no</span></td>
+                <td><span>&nbsp;</span></td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+        <div class="col-sm-6">
+
+          <table class="table no-border table-condensed">
+            <thead class="no-border">
+              <tr class="success">
+                <th style="width:50%;"><strong>Chart data</strong></th>
+                <th style="width:25%"><strong>&nbsp;</strong></th>
+                <th style="width:25%"><strong>&nbsp;</strong></th>
+              </tr>
+            </thead>
+            <tbody class="no-border-y">
+              <tr>
+                <td>
+                  <label class="control-label">Density</label>
+                </td>
+                <td><span>0</span></td>
+                <td><span>kg/m3</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Flow</label>
+                </td>
+                <td><span>&nbsp;</span></td>
+                <td><span>m3/h</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Pressure</label>
+                </td>
+                <td><span>&nbsp;</span></td>
+                <td><span>Pa</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Power</label>
+                </td>
+                <td><span>&nbsp;</span></td>
+                <td><span>Hp</span></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="block-flat">
+            <div class="header">
+              <h3>A Chart</h3>
+            </div>
+            <div class="content">
+              <div id="site_statistics" style="width: 100%; height: 300px; padding: 0px; position: relative;"></div>
+            </div>
+          </div>
+
+          <div class="block-flat">
+            <div class="header">              
+              <h3>B Chart</h3>
+            </div>
+            <div class="content">
+              <div id="site_statistics2" style="width: 100%; height: 300px; padding: 0px; position: relative;"></div>              
+            </div>
+          </div>
+
+          <table class="table no-border table-condensed">
+            <thead class="no-border">
+              <tr class="success">
+                <th style="width:50%;"><strong>Motor selections</strong></th>
+                <th style="width:25%;"><strong>&nbsp;</strong></th>
+                <th style="width:25%;"><strong>&nbsp;</strong></th>
+              </tr>
+            </thead>
+            <tbody class="no-border-y">
+              <tr>
+                <td>
+                  <label class="control-label">Fan shaft</label>
+                </td>
+                <td><span>101.6</span></td>
+                <td><span>mm</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Prel. c/c motor-fan</label>
+                </td>
+                <td><span>66.9</span></td>
+                <td><span>in</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Make</label>
+                </td>
+                <td><span>SIEMENS</span></td>
+                <td><span>&nbsp;</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Serie</label>
+                </td>
+                <td><span>Hi. Ef.</span></td>
+                <td><span>&nbsp;</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Type</label>
+                </td>
+                <td><span>Type TEFC</span></td>
+                <td><span>&nbsp;</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Frame</label>
+                </td>
+                <td><span>444T</span></td>
+                <td><span>&nbsp;</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Power</label>
+                </td>
+                <td><span>100</span></td>
+                <td><span>hp</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Power with factor</label>
+                </td>
+                <td><span>78.91</span></td>
+                <td><span>hp</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Rel. T</label>
+                </td>
+                <td><span>?</span></td>
+                <td><span>&nbsp;</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Article No.</label>
+                </td>
+                <td><span>0</span></td>
+                <td><span>&nbsp;</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Speed</label>
+                </td>
+                <td><span>1187</span></td>
+                <td><span>rpm</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Weight</label>
+                </td>
+                <td><span>0</span></td>
+                <td><span>lb</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Inertia motor</label>
+                </td>
+                <td><span>3150</span></td>
+                <td><span>LbFt2</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Inertia</label>
+                  <label class="control-label">required by the fan Arr # 1</label>
+                </td>
+                <td><span>1389</span></td>
+                <td><span>LbFt2</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Price</label>
+                </td>
+                <td><span>$ 56,971.00</span></td>
+                <td><span>MX</span></td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+    
+      </div>
+    
+    </div>
+  </div> 
+</div>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.nanoscroller/jquery.nanoscroller.js"></script>
+  <script src="js/jquery.sparkline/jquery.sparkline.min.js"></script>
+  <script src="js/jquery.easypiechart/jquery.easy-pie-chart.js"></script>
+  <script src="js/behaviour/general.js"></script>
+  <script src="js/jquery.ui/jquery-ui.js"></script>
+  <script src="js/jquery.nestable/jquery.nestable.js"></script>
+  <script src="js/bootstrap.switch/bootstrap-switch.min.js"></script>
+  <script src="js/bootstrap.datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+  <script src="js/jquery.select2/select2.min.js"></script>
+  <script src="js/bootstrap.slider/js/bootstrap-slider.js"></script>
+  <script src="js/jquery.gritter/js/jquery.gritter.js"></script>
+  <script src="js/jquery.niftymodals/js/jquery.modalEffects.js"></script>
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+      //initialize the javascript
+      App.init();
+      App.charts();
+
+      $('.md-trigger').modalEffects();
+
+    });
+  </script>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  
+  <script src="js/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/jquery.flot/jquery.flot.js"></script>
+  <script type="text/javascript" src="js/jquery.flot/jquery.flot.pie.js"></script>
+  <script type="text/javascript" src="js/jquery.flot/jquery.flot.resize.js"></script>
+  <script type="text/javascript" src="js/jquery.flot/jquery.flot.labels.js"></script>
+
+</body>
+</html>
