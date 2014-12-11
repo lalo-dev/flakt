@@ -29,6 +29,10 @@ $(document).ready(function() {
 
 	unidades();
 
+	$('#slcInletPressure').change(function() {
+		$('#spanInletPressure').text('').text($('#slcInletPressure option:selected').text());
+	});
+
 	$('#tocanvas').on('click', function() {
 		//alert('ok');
 		html2canvas(document.body, {
@@ -563,7 +567,7 @@ function imprimePDFResume(){
 	var inletPressureUnit = '&inletPressureUnit='+$('#slcInletPressure option:selected').text();
 	var ouletPressure     = '&ouletPressure='+$('#txtOuletPressure').val();
 	var temp              = '&temp='+$('#txtTemp').val();
-	var tempUnit          = '&tempUnit='+$('#slcTemp').val();
+	var tempUnit          = '&tempUnit='+$('#hdnTemp').val();
 	var tempCold          = '&tempCold='+$('#txtTemCold').val();
 	var density           = '&density='+$('#txtDensity').val();
 	var densityUnit       = '&densityUnit='+$('#slcDensity option:selected').text();
@@ -590,6 +594,9 @@ function imprimePDFResume(){
 	var speed             = '&speed='+$('#spanSpeed').text();
 	var torqueOperation   = '&torqueOperation='+$('#spanTorqueOperation').text();
 	var torqueFlow        = '&torqueFlow='+$('#spanTorqueFlow').text();
+	var seller            = '&seller='+$('#hdnSeller').val();
+	var customer          = '&customer='+$('#hdnCustomer').val();
+	var proposal          = '&proposal='+$('#hdnProposal').val();
 
 	var datos             = flow+flowUnit+inletPressure+inletPressureUnit+ouletPressure+temp+tempUnit+tempCold+density+densityUnit+type+size+area+areaUnit+pd+pdUnit+accessories+inlet+oulet+sflow+totalPressure+eff+komp+power+powerCold+line+wr2+wr2Unit+totalWeight+totalWeightUnit+speed+torqueOperation+torqueFlow;
 
@@ -620,24 +627,6 @@ function imprimePDFResume(){
 	
 }
 
-function exportaPDFResume(){
-	
-	$.blockUI(); 
-
-
-	//Lanzando pdf de reporte
-	var vDatos = "acc=exportaPDF";
-	var vUrl = "php/02Controladores/CResume.php";
-
-	peticionAjax(vDatos, vUrl).done(function(vRes) {
-
-		window.open('media/pdf/resume.pdf', '_blank');
-
-		$.unblockUI();
-	});
-
-}
-
 function unidades(){
 	var vDatos = "acc=sistemaUnidades";
 	var vUrl = "php/02Controladores/CResume.php";
@@ -649,14 +638,18 @@ function unidades(){
 			//Solo se muestran las opciones SI en los combos
 			$('.uSA').hide();
 			$('.uSI').show();
+			$('#hdnTemp').text('').text('c');
 		} else {
 			//Solo se muestran las opciones SA en los combos
 			$('.uSI').hide();
 			$('.uSA').show();
+			$('#hdnTemp').text('').text('f');
 		}
 
 		$('#spanBladeType').text('').text(vRes['BladeType'])
 		$('#hdnBladeType').val(vRes['BladeType']);
+
+		$('#spanInletPressure').text('').text($('#slcInletPressure option:selected').text());
 		
 	});	  
 }
@@ -672,7 +665,7 @@ function listaBaseb(){
 		"inpUnit"      : $('#slcInletPressure').val(),
 		"outp"         : $('#txtOuletPressure').val(),
 		"temp"         : $('#txtTemp').val(),
-		"tempUnit"     : $('#slcTemp').val(),
+		"tempUnit"     : $('#hdnTemp').val(),
 		"tempCold"     : $('#txtTemCold').val(),
 		"density"      : $('#txtDensity').val(),
 		"densityUnit"  : $('#slcDensity').val()

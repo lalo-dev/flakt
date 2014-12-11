@@ -1356,21 +1356,21 @@
 						  			</thead>
 						  			<tbody class="no-border-y">
 						  				<tr>
-						  					<td><label class="control-label">Date:</label></td>
-						  					<td colspan="5">12-12-2014</td>
+						  					<td><label class="control-label">Date: </label></td>
+						  					<td colspan="5">'.date("Y-m-d H:i:s").'</td>
 						  					<td rowspan="7" style="font-size: 50px; text-align: center; vertical-align: middle;">2</td>
 						  				</tr>
 						  				<tr>
 						  					<td><label class="control-label">Seller:</label></td>
-						  					<td colspan="5">Eduardo Martinez Martinez</td>
+						  					<td colspan="5">'.$_POST['seller'].'</td>
 						  				</tr>
 						  				<tr>
 						  					<td><label class="control-label">Customer:</label></td>
-						  					<td colspan="5">CEMEX S.A. de C.V.</td>
+						  					<td colspan="5">'.$_POST['customer'].'</td>
 						  				</tr>
 						  				<tr>
 						  					<td><label class="control-label">No. Proposal:</label></td>
-						  					<td colspan="5">13252-HTGR-0928287</td>
+						  					<td colspan="5">'.$_POST['proposal'].'</td>
 						  				</tr>
 							            <tr>
 							              <td style="width: 15%;"><label class="control-label">Flow</label></td>

@@ -244,12 +244,6 @@
             </a>
           </div>
           <div class="col-xs-3 col-sm-2 col-md-1">
-            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="exportaPDFResume()"
-                data-placement="top" data-toggle="tooltip" data-original-title="Export PDF">
-              <i class="fa fa-file-text"></i>
-            </button>
-          </div>
-          <div class="col-xs-3 col-sm-2 col-md-1">
             <button type="button" class="btn btn-primary btn-lg btn-block" onclick="imprimePDFResume()" 
                 data-placement="top" data-toggle="tooltip" data-original-title="Print">
               <i class="fa fa-print"></i>
@@ -259,29 +253,39 @@
 
         <hr>
         <div class="col-sm-12" >
+          <!-- Campos ocultos -->
+          <input type="hidden" id="hdnBladeType">
+          <input type="hidden" id="hdnTemp">
+          <input type="hidden" id="hdnSeller" value="<?php session_start(); echo $_SESSION["CompleteUserName"]; ?>">
+          <!-- Fin campos ocultos -->
           <table class="table no-border table-condensed">
             <thead class="no-border">
               <tr class="success">
-                <th colspan="7"><strong>Indata</strong></th> 
+                <th colspan="8"><strong>Indata</strong></th> 
               </tr>
             </thead>
             <tbody class="no-border-y">
               <tr>
+                <td style="width: 5%;"><label class="control-label">Departure</label></td>
                 <td style="width: 15%;"><label class="control-label">Flow</label></td>
                 <td style="width: 15%;"><label class="control-label">Inlet pressure</label></td>
                 <td style="width: 15%;"><label class="control-label">Outlet pressure</label></td>
                 <td style="width: 15%;"><label class="control-label">Temperature</label></td>
-                <td style="width: 15%;"><label class="control-label">Temp Cold Start Up</label></td>
-                <td style="width: 15%;"><label class="control-label">Density</label></td>
+                <td style="width: 10%;"><label class="control-label">Temp Cold Start Up</label></td>
+                <td style="width: 15%;"><label class="control-label">Density Normal</label></td>
                 <td style="width: 10%;">&nbsp;</td>
               </tr>
               <tr>
                 <td>
                   <div class="input-group input-group-sm">
-                    <input type="hidden" id="hdnBladeType">
-                    <input type="text" class="form-control" id="txtFlow" value="0">
-                    <select class="form-control" id="slcFlow">
-                      <option value="0">Select</option>
+                  <span class="input-group-addon">#</span>
+                    <input type="text" class="form-control" id="txtDeparture" value="1">
+                  </div>
+                </td>
+                <td>
+                  <div class="input-group input-group-sm">
+                    <input type="text" class="form-control" style="width: 50%" id="txtFlow" value="0">
+                    <select class="form-control" style="width: 50%" id="slcFlow">
                       <option class="uSI" value="m3h">m3/h</option>
                       <option class="uSI" value="m3s">m3/s</option>
                       <option class="uSI" value="nm3h">Nm3/h</option>
@@ -292,11 +296,10 @@
                 </td>
                 <td>
                   <div class="input-group input-group-sm">
-                    <input type="text" class="form-control" id="txtInletPressure" value="0">
-                    <select class="form-control" id="slcInletPressure">
-                      <option value="0">Select</option>
-                      <option class="uSI" value="mmwg">mmwg</option>
+                    <input type="text" class="form-control" style="width: 50%" id="txtInletPressure" value="0">
+                    <select class="form-control" style="width: 50%" id="slcInletPressure">
                       <option class="uSI" value="Pa">Pa</option>
+                      <option class="uSI" value="mmwg">mmwg</option>
                       <option class="uSA" value="inwg">inwg</option>
                       <option class="uSA" value="lbin2">lb/in2</option>
                     </select>
@@ -305,30 +308,29 @@
                 <td>
                   <div class="input-group input-group-sm">
                     <input type="text" class="form-control" id="txtOuletPressure" value="0">
+                    <span class="input-group-addon" id="spanInletPressure"></span>
                   </div>
                 </td>
                 <td>
                   <div class="input-group input-group-sm">
                     <input type="text" class="form-control" id="txtTemp" value="0">
-                    <select class="form-control" id="slcTemp">
-                      <option value="0">Select</option>
-                      <option class="uSI" value="c">&deg;C</option>
-                      <option class="uSA" value="f">&deg;F</option>
-                    </select>
+                    <span class="input-group-addon uSI">&deg;C</span>
+                    <span class="input-group-addon uSA">&deg;F</span>
                   </div>
                 </td>
                 <td>
                   <div class="input-group input-group-sm">
                     <input type="text" class="form-control" id="txtTemCold" value="0">
+                    <span class="input-group-addon uSI">&deg;C</span>
+                    <span class="input-group-addon uSA">&deg;F</span>
                   </div>
                 </td>
                 <td>
                   <div class="input-group input-group-sm">
-                    <input type="text" class="form-control" id="txtDensity" value="0">
-                    <select class="form-control" id="slcDensity">
-                      <option value="0">Select</option>
-                      <option class="uSI" value="kgm3">Kg/m3</option>
+                    <input type="text" class="form-control" style="width: 50%" id="txtDensity" value="0">
+                    <select class="form-control" style="width: 50%" id="slcDensity">
                       <option class="uSI" value="kgnm3">Kg/Nm3</option>
+                      <option class="uSI" value="kgm3">Kg/m3</option>
                       <option class="uSA" value="lbft3">lb/ft3</option>
                       <option class="uSA" value="slbft3">slb/ft3</option>
                     </select>
