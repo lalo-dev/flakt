@@ -1347,59 +1347,77 @@
 								 <p class="page" style="margin-right: 10px;">Page </p>
 						  	</div>
 						  	<div id="content">
-						        <table class="table no-border table-condensed">
-						          <thead class="no-border">
-						            <tr class="success">
-						              <th colspan="7"><strong>Indata</strong></th> 
-						            </tr>
-						          </thead>
-						          <tbody class="no-border-y">
-						            <tr>
-						              <td style="width: 15%;"><label class="control-label">Flow</label></td>
-						              <td style="width: 15%;"><label class="control-label">Inlet pressure</label></td>
-						              <td style="width: 20%;"><label class="control-label">Outlet pressure</label></td>
-						              <td style="width: 15%;"><label class="control-label">Temperature</label></td>
-						              <td style="width: 20%;"><label class="control-label">Temp Cold Start Up</label></td>
-						              <td style="width: 15%;"><label class="control-label">Density</label></td>
-						            </tr>
-						            <tr>
-						              <td>
-						                <div class="input-group input-group-sm">
-						                  '.$_POST['flow'].' '.$_POST['flowUnit'].'
-						                </div>
-						              </td>
-						              <td>
-						                <div class="input-group input-group-sm">
-						                  '.$_POST['inletPressure'].' '.$_POST['inletPressureUnit'].'
-						                </div>
-						              </td>
-						              <td>
-						                <div class="input-group input-group-sm">
-						                  '.$_POST['ouletPressure'].' '.$_POST['inletPressureUnit'].'
-						                </div>
-						              </td>
-						              <td>
-						                <div class="input-group input-group-sm">
-						                  '.$_POST['temp'].' &deg;'.strtoupper($_POST['tempUnit']).'
-						                </div>
-						              </td>
-						              <td>
-						                <div class="input-group input-group-sm">
-						                  '.$_POST['tempCold'].' &deg;'.strtoupper($_POST['tempUnit']).'
-						                </div>
-						              </td>
-						              <td>
-						                <div class="input-group input-group-sm">
-						                  '.$_POST['density'].' '.$_POST['densityUnit'].'
-						                </div>
-						              </td>
-						            </tr>
-						          </tbody>
-						        </table>
+						  		<table class="table no-border table-condensed">
+						  			<thead class="no-border">
+						  				<tr class="success">
+						  					<th colspan="6"><strong>Indata</strong></th>
+						  					<th><strong>Departure</strong></th>
+						  				</tr>
+						  			</thead>
+						  			<tbody class="no-border-y">
+						  				<tr>
+						  					<td><label class="control-label">Date:</label></td>
+						  					<td colspan="5">12-12-2014</td>
+						  					<td rowspan="7" style="font-size: 50px; text-align: center; vertical-align: middle;">2</td>
+						  				</tr>
+						  				<tr>
+						  					<td><label class="control-label">Seller:</label></td>
+						  					<td colspan="5">Eduardo Martinez Martinez</td>
+						  				</tr>
+						  				<tr>
+						  					<td><label class="control-label">Customer:</label></td>
+						  					<td colspan="5">CEMEX S.A. de C.V.</td>
+						  				</tr>
+						  				<tr>
+						  					<td><label class="control-label">No. Proposal:</label></td>
+						  					<td colspan="5">13252-HTGR-0928287</td>
+						  				</tr>
+							            <tr>
+							              <td style="width: 15%;"><label class="control-label">Flow</label></td>
+							              <td style="width: 15%;"><label class="control-label">Inlet pressure</label></td>
+							              <td style="width: 15%;"><label class="control-label">Outlet pressure</label></td>
+							              <td style="width: 15%;"><label class="control-label">Temperature</label></td>
+							              <td style="width: 20%;"><label class="control-label">Temp Cold Start Up</label></td>
+							              <td style="width: 15%;"><label class="control-label">Density Normal</label></td>
+							            </tr>
+							            <tr>
+							              <td>
+							                <div class="input-group input-group-sm">
+							                  '.$_POST['flow'].' '.$_POST['flowUnit'].'
+							                </div>
+							              </td>
+							              <td>
+							                <div class="input-group input-group-sm">
+							                  '.$_POST['inletPressure'].' '.$_POST['inletPressureUnit'].'
+							                </div>
+							              </td>
+							              <td>
+							                <div class="input-group input-group-sm">
+							                  '.$_POST['ouletPressure'].' '.$_POST['inletPressureUnit'].'
+							                </div>
+							              </td>
+							              <td>
+							                <div class="input-group input-group-sm">
+							                  '.$_POST['temp'].' &deg;'.strtoupper($_POST['tempUnit']).'
+							                </div>
+							              </td>
+							              <td>
+							                <div class="input-group input-group-sm">
+							                  '.$_POST['tempCold'].' &deg;'.strtoupper($_POST['tempUnit']).'
+							                </div>
+							              </td>
+							              <td>
+							                <div class="input-group input-group-sm">
+							                  '.$_POST['density'].' '.$_POST['densityUnit'].'
+							                </div>
+							              </td>
+							            </tr>
+							        </tbody>
+							    </table>
 
 							    <table class="table no-border table-condensed">
 						    		<tr>
-							    		<td width="250">
+							    		<td width="200">
 
 											<table class="table no-border table-condensed">
 												<thead class="no-border">
@@ -1585,49 +1603,6 @@
 											<table class="table no-border table-condensed">
 												<thead class="no-border">
 												  <tr class="success">
-												    <th style="width:50%;"><strong>Chart units</strong></th>
-												    <th style="width:25%"><strong>&nbsp;</strong></th>
-												    <th style="width:25%"><strong>&nbsp;</strong></th>
-												  </tr>
-												</thead>
-												<tbody class="no-border-y">
-												  <tr>
-												    <td>
-												      <label class="control-label">Density</label>
-												    </td>
-												    <td><span>-</span></td>
-												    <td><span>'.$_POST['densityUnit'].'</span></td>
-												  </tr>
-												  <tr>
-												    <td>
-												      <label class="control-label">Flow</label>
-												    </td>
-												    <td><span>-</span></td>
-												    <td><span>'.$_POST['flowUnit'].'</span></td>
-												  </tr>
-												  <tr>
-												    <td>
-												      <label class="control-label">Pressure</label>
-												    </td>
-												    <td><span>-</span></td>
-												    <td><span>'.$_POST['inletPressureUnit'].'</span></td>
-												  </tr>
-												  <tr>
-												    <td>
-												      <label class="control-label">Power</label>
-												    </td>
-												    <td><span>-</span></td>
-												    <td><span>Hp</span></td>
-												  </tr>
-												  <tr>
-												  	<td colspan="3">&nbsp;</td>
-												  </tr>
-												</tbody>
-											</table>
-
-											<table class="table no-border table-condensed">
-												<thead class="no-border">
-												  <tr class="success">
 												    <th style="width:50%;"><strong>Sound</strong></th>
 												    <th style="width:20%;"><strong>&nbsp;</strong></th>
 												    <th style="width:20%;"><strong>&nbsp;</strong></th>
@@ -1667,86 +1642,20 @@
 												  </tr>
 												</tbody>
 											</table>
-
 							    		</td>
-							    		<td width="250">
+							    		<td width="300">
 							    			<table class="table no-border table-condensed">
 												<thead class="no-border" class="success">
 												  <tr class="success">
 												    <th class="success"><strong>Charts</strong></th>
+												    <th>1.294</th>
+												    <th>Kg/Nm3</th>
 												  </tr>
 												</thead>
 											</table>
-									        <img src="../../media/pdf/chartA.jpg" width="300" style="margin-left: 27px;" />
+									        <img src="../../media/pdf/chartA.jpg" width="380" height="330" style="margin-left: 27px;" />
 									        <br />
-									        <img src="../../media/pdf/chartB.jpg" width="300" style="margin-left: 27px;" />
-									        <table class="table no-border table-condensed no-strip" style="margin-left: 27px;">
-									        	<tbody class="no-border-y">
-									        		<tr>
-									        			<td style="border:0;">
-									        				<div style="width:15px;height:15px;background-color:#7cb5ec;"></div>
-									        			</td>
-									        			<td style="border:0">&nbsp;</td>
-									        			<td style="border:0">
-									        				Pressure - Operating curve
-									        			</td>
-									        		</tr>
-									        		<tr>
-									        			<td style="border:0;">
-									        				<div style="width:15px;height:15px;background-color:#f7a35c;"></div>
-									        			</td>
-									        			<td style="border:0">&nbsp;</td>
-									        			<td style="border:0">
-									        				Pressure - 2&deg;
-									        			</td>
-									        		</tr>
-									        		<tr>
-									        			<td style="border:0;">
-									        				<div style="width:15px;height:15px;background-color:#90ee7e;"></div>
-									        			</td>
-									        			<td style="border:0">&nbsp;</td>
-									        			<td style="border:0">
-									        				Pressure - 5&deg;
-									        			</td>
-									        		</tr>
-									        		<tr>
-									        			<td style="border:0;">
-									        				<div style="width:15px;height:15px;background-color:#7798BF;"></div>
-									        			</td>
-									        			<td style="border:0">&nbsp;</td>
-									        			<td style="border:0">
-									        				Pressure - 10&deg;
-									        			</td>
-									        		</tr>
-									        		<tr>
-									        			<td style="border:0;">
-									        				<div style="width:15px;height:15px;background-color:#aaeeee;"></div>
-									        			</td>
-									        			<td style="border:0">&nbsp;</td>
-									        			<td style="border:0">
-									        				Pressure - Operating point XY
-									        			</td>
-									        		</tr>
-									        		<tr>
-									        			<td style="border:0;">
-									        				<div style="width:15px;height:15px;background-color:#DF5353;"></div>
-									        			</td>
-									        			<td style="border:0">&nbsp;</td>
-									        			<td style="border:0">
-									        				Power - Operating curve
-									        			</td>
-									        		</tr>
-									        		<tr>
-									        			<td style="border:0;">
-									        				<div style="width:15px;height:15px;background-color:#55BF3B;"></div>
-									        			</td>
-									        			<td style="border:0">&nbsp;</td>
-									        			<td style="border:0">
-									        				Power - Operating point XY
-									        			</td>
-									        		</tr>
-									        	</tbody>
-									        </table>
+									        <img src="../../media/pdf/chartB.jpg" width="380" height="310" style="margin-left: 27px;" />
 							    		</td>
 							    	</tr>
 							    </table>
@@ -1762,15 +1671,6 @@
 		$dompdf->load_html($vHTML);
 		$dompdf->render();
 		file_put_contents("../../media/pdf/resumeImp.pdf", $dompdf->output());
-		//$dompdf->stream("../../media/pdf/resumeImp.pdf");
-		
-		
-		/*
-		$dompdf = new DOMPDF();
-    	$dompdf->load_html($vHTML);
-    	$dompdf->render();
-		file_put_contents("../../media/pdf/resumeImp.pdf", $dompdf->output());
-		*/
 
 		echo "1";
 	}

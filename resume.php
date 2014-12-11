@@ -344,7 +344,7 @@
           </table>
         </div>
         
-        <div class="col-sm-4">
+        <div class="col-sm-5">
 
           <table class="table no-border table-condensed">
             <thead class="no-border">
@@ -548,7 +548,7 @@
 
         </div>
 
-        <div class="col-sm-8">
+        <div class="col-sm-7">
 
           <table class="table no-border table-condensed">
             <thead class="no-border">
@@ -574,7 +574,7 @@
 
           <div id="graficaA" class="block-flat">
             <div class="content">
-              <div id="graficaPresion" style="width: 100%; height: 400px; margin: 0 auto"></div>
+              <div id="graficaPresion" style="width: 100%; height: 430px; margin: 0 auto"></div>
             </div>
           </div>
 
@@ -584,12 +584,12 @@
             </div>
           </div>
 
-          <div class="generarImagenGrafica" style="width:465px;">
+          <div class="generarImagenGrafica" style="width:670px;">
             <div id="graficaPresionPfd">
-              <canvas id="canvasPresion" style="" width="460" height="400"></canvas>
+              <canvas id="canvasPresion" style="" width="670" height="430"></canvas>
             </div>
             <div id="graficaPoderPfd">
-              <canvas id="canvasPoder" style="" width="460" height="400"></canvas>
+              <canvas id="canvasPoder" style="" width="670" height="400"></canvas>
             </div>
           </div>
 

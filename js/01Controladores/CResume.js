@@ -168,8 +168,7 @@ $(document).ready(function() {
 			}, null, document.getElementsByTagName('head')[0]);
 
 			Highcharts.theme = {
-			   colors: ["#7cb5ec", "#f7a35c", "#90ee7e", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee",
-			      "#55BF3B", "#DF5353", "#7798BF", "#aaeeee"],
+			   colors: ["#000"],
 			   chart: {
 			      backgroundColor: null,
 			      style: {
@@ -195,7 +194,8 @@ $(document).ready(function() {
 			      }
 			   },
 			   xAxis: {
-			      gridLineWidth: 2,
+			      gridLineWidth: 0.5,
+			      gridLineColor: '#000',
 			      labels: {
 			         style: {
 			            fontSize: '12px'
@@ -203,11 +203,12 @@ $(document).ready(function() {
 			      }
 			   },
 			   yAxis: {
-			   	  gridLineWidth: 2,
-			      minorTickInterval: 'auto',
+			   	  gridLineWidth: 0.5,
+			   	  gridLineColor: '#000',
+			      minorTickInterval: '0',
 			      title: {
 			         style: {
-			            textTransform: 'uppercase'
+			            textTransform: ''
 			         }
 			      },
 			      labels: {
@@ -218,7 +219,7 @@ $(document).ready(function() {
 			   },
 			   plotOptions: {
 			      candlestick: {
-			         lineColor: '#404048'
+			         lineColor: '#000'
 			      },
 			      series: {
 		            marker: {
@@ -228,7 +229,7 @@ $(document).ready(function() {
 			   },
 
 			   // General
-			   background2: '#F0F0EA'
+			   background2: '#FFF'
 			   
 			};
 
@@ -240,38 +241,38 @@ $(document).ready(function() {
   				chart: {
   					type: 'spline'
   				},
-  				colors: ["#7cb5ec", "#f7a35c", "#90ee7e", "#7798BF", "#aaeeee"],
+  				colors: ["#000"],
 	            title: {
-	                text: 'Pressure',
-	                x: -50 //center
+	                text: 'PERFORMANCE CURVE',
+	                x: 0 //center
 	            },
 	            xAxis: {
 	            	labels: {
 		                formatter: function () {
-		                    return this.value + ' m3/h';
+		                    return this.value + '';
 		                }
 		            },
 	                title: {
-	                	text: 'Flow'
+	                	text: 'FLOW - m3/h'
 	                },
 	                plotLines: [{
-	                	width: 10,
-	                	color: '#808080'
+	                	width: 0.5,
+	                	color: '#000'
 	                }]
 	            },
 	            yAxis: {
 	            	labels: {
 		                formatter: function () {
-		                    return this.value + ' Pa';
+		                    return this.value + '';
 		                }
 		            },
 	                title: {
-	                    text: 'Pressure'
+	                    text: 'PRESSURE - Pa'
 	                },
 	                plotLines: [{
 	                    value: 0,
-	                    width: 1,
-	                    color: '#808080'
+	                    width: 0.5,
+	                    color: '#000'
 	                }]
 	            },
 	            tooltip: {
@@ -284,13 +285,15 @@ $(document).ready(function() {
 	                borderWidth: 0
 	            },
 	            series: [{
+	            	showInLegend: false,
 	                name: 'Operating curve',
 	                data: [{
 		                dataLabels: {
 		                    enabled: true,
 		                    align: 'left',
 		                    style: {
-		                        fontWeight: 'bold'
+		                        fontWeight: 'bold',
+		                        fontSize: '15px'
 		                    },
 		                    x: 3,
 		                    verticalAlign: 'bottom',
@@ -314,6 +317,7 @@ $(document).ready(function() {
 	                	[lh[9],lk[9]]
 	                ]
 	            }, {
+	            	showInLegend: false,
 	                name: '2º',
 	                data: [
 		                [lh[0],(lj[0]*25)],
@@ -326,7 +330,8 @@ $(document).ready(function() {
 		                    enabled: true,
 		                    align: 'left',
 		                    style: {
-		                        fontWeight: 'bold'
+		                        fontWeight: 'bold',
+		                        fontSize: '15px'
 		                    },
 		                    x: 3,
 		                    verticalAlign: 'top',
@@ -341,6 +346,7 @@ $(document).ready(function() {
 		            }
 		            ]
 	            }, {
+	            	showInLegend: false,
 	                name: '5º',
 	                data: [
 		                [lh[0],(lj[0]*4)],
@@ -356,7 +362,8 @@ $(document).ready(function() {
 		                    enabled: true,
 		                    align: 'left',
 		                    style: {
-		                        fontWeight: 'bold'
+		                        fontWeight: 'bold',
+		                        fontSize: '15px'
 		                    },
 		                    x: -10,
 		                    verticalAlign: 'bottom',
@@ -371,6 +378,7 @@ $(document).ready(function() {
 		            }
 		            ]
 	            }, {
+	            	showInLegend: false,
 	                name: '10º',
 	                data: [
 		                [lh[0],lj[0]],
@@ -386,7 +394,8 @@ $(document).ready(function() {
 		                    enabled: true,
 		                    align: 'left',
 		                    style: {
-		                        fontWeight: 'bold'
+		                        fontWeight: 'bold',
+		                        fontSize: '15px'
 		                    },
 		                    x: -15,
 		                    verticalAlign: 'bottom',
@@ -401,13 +410,15 @@ $(document).ready(function() {
 		            }
 		            ]
 	            }, {
+	            	showInLegend: false,
 	                name: 'Operating point XY',
 	                data: [{
 		                dataLabels: {
 		                    enabled: true,
 		                    align: 'left',
 		                    style: {
-		                        fontWeight: 'bold'
+		                        fontWeight: 'bold',
+		                        fontSize: '15px'
 		                    },
 		                    x: 3,
 		                    verticalAlign: 'bottom',
@@ -423,41 +434,47 @@ $(document).ready(function() {
 		                [loadPoint, m12],
 		                [loadPoint, 0]
 		            ]
-	            }]
+	            }],
+	            exporting: {
+		            enabled: false
+		        },
 	        });
 
 			$('#graficaPoder').highcharts({
+				exporting: {
+		            enabled: false
+		        },
 				chart: {
   					type: 'spline'
   				},
-				colors: ["#DF5353", "#55BF3B"],
+				colors: ["#000"],
 	            title: {
-	                text: 'Power',
+	                text: '',
 	                x: -50 //center
 	            },
 	            xAxis: {
 	            	labels: {
 		                formatter: function () {
-		                    return this.value + ' m3/h';
+		                    return this.value + '';
 		                }
 		            },
 	                title: {
-	                	text: 'Flow'
+	                	text: 'FLOW - m3/h'
 	                }
 	            },
 	            yAxis: {
 	            	labels: {
 		                formatter: function () {
-		                    return this.value + ' Hp';
+		                    return this.value + '';
 		                }
 		            },
 	                title: {
-	                    text: 'Power'
+	                    text: 'POWER - Hp'
 	                },
 	                plotLines: [{
 	                    value: 0,
-	                    width: 1,
-	                    color: '#808080'
+	                    width: 0.5,
+	                    color: '#000'
 	                }]
 	            },
 	            tooltip: {
@@ -470,13 +487,15 @@ $(document).ready(function() {
 	                borderWidth: 0
 	            },
 	            series: [{
+	            	showInLegend: false,
 	            	name: 'Operating curve',
 	                data: [{
 		                dataLabels: {
 		                    enabled: true,
 		                    align: 'left',
 		                    style: {
-		                        fontWeight: 'bold'
+		                        fontWeight: 'bold',
+		                        fontSize: '15px'
 		                    },
 		                    x: 3,
 		                    verticalAlign: 'middle',
@@ -500,13 +519,15 @@ $(document).ready(function() {
 	                	[lh[9],ll[9]]
 	                ]
 	            }, {
+	            	showInLegend: false,
 	            	name: 'Operating point XY',
 	                data: [{
 		                dataLabels: {
 		                    enabled: true,
 		                    align: 'left',
 		                    style: {
-		                        fontWeight: 'bold'
+		                        fontWeight: 'bold',
+		                        fontSize: '15px'
 		                    },
 		                    x: 3,
 		                    verticalAlign: 'bottom',
