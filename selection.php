@@ -44,7 +44,7 @@
 
   <div class="container-fluid" id="pcont">
     <div class="page-head">
-      <h2>Wizard Selection - Centrifugal HA</h2>
+      <h2>Wizard Selection</h2>
     </div>
     <div class="cl-mcont">		
     <div class="row wizard-row">
@@ -87,7 +87,8 @@
                         </tr>
                         <tr>
                           <td><strong>Seller</strong></td>
-                          <td><span id="spnSeller" ></span></td>
+                          <!-- <td><span id="spnSeller"></span></td> -->
+                          <td><span><?php echo $_SESSION["CompleteUserName"]; ?></span></td>
                         </tr>
                         <tr>
                           <td><strong>Customer Name</strong></td>

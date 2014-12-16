@@ -256,7 +256,9 @@
           <!-- Campos ocultos -->
           <input type="hidden" id="hdnBladeType">
           <input type="hidden" id="hdnTemp">
-          <input type="hidden" id="hdnSeller" value="<?php session_start(); echo $_SESSION["CompleteUserName"]; ?>">
+          <input type="hidden" id="hdnSeller" value="<?php echo $_SESSION["CompleteUserName"]; ?>">
+          <input type="hidden" id="hdnCustomerName">
+          <input type="hidden" id="hdnProposal">
           <!-- Fin campos ocultos -->
           <table class="table no-border table-condensed">
             <thead class="no-border">
@@ -327,7 +329,7 @@
                 </td>
                 <td>
                   <div class="input-group input-group-sm">
-                    <input type="text" class="form-control" style="width: 50%" id="txtDensity" value="0">
+                    <input type="text" class="form-control" style="width: 50%" id="txtDensity" value="1.294">
                     <select class="form-control" style="width: 50%" id="slcDensity">
                       <option class="uSI" value="kgnm3">Kg/Nm3</option>
                       <option class="uSI" value="kgm3">Kg/m3</option>

@@ -595,10 +595,11 @@ function imprimePDFResume(){
 	var torqueOperation   = '&torqueOperation='+$('#spanTorqueOperation').text();
 	var torqueFlow        = '&torqueFlow='+$('#spanTorqueFlow').text();
 	var seller            = '&seller='+$('#hdnSeller').val();
-	var customer          = '&customer='+$('#hdnCustomer').val();
+	var customerName        = '&customerName='+escape($('#hdnCustomerName').val());
 	var proposal          = '&proposal='+$('#hdnProposal').val();
+	var departure = '&departure='+$('#txtDeparture').val();
 
-	var datos             = flow+flowUnit+inletPressure+inletPressureUnit+ouletPressure+temp+tempUnit+tempCold+density+densityUnit+type+size+area+areaUnit+pd+pdUnit+accessories+inlet+oulet+sflow+totalPressure+eff+komp+power+powerCold+line+wr2+wr2Unit+totalWeight+totalWeightUnit+speed+torqueOperation+torqueFlow;
+	var datos             = flow+flowUnit+inletPressure+inletPressureUnit+ouletPressure+temp+tempUnit+tempCold+density+densityUnit+type+size+area+areaUnit+pd+pdUnit+accessories+inlet+oulet+sflow+totalPressure+eff+komp+power+powerCold+line+wr2+wr2Unit+totalWeight+totalWeightUnit+speed+torqueOperation+torqueFlow+seller+customerName+proposal+departure;
 
 	canvasPresion();
   	canvasPoder();
@@ -648,6 +649,9 @@ function unidades(){
 
 		$('#spanBladeType').text('').text(vRes['BladeType'])
 		$('#hdnBladeType').val(vRes['BladeType']);
+
+		$('#hdnCustomerName').val('').val(vRes['CustomerName']);
+		$('#hdnProposal').val('').val(vRes['Proposal']);
 
 		$('#spanInletPressure').text('').text($('#slcInletPressure option:selected').text());
 		
